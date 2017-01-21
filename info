@@ -1,0 +1,45 @@
+try (Scanner fin = new Scanner(new File ("in.text"));
+        PrintStream fout = new PrintStream(new File("out.txt"));) {
+            while (fin.hasNext()) {
+                int al = fin.nextInt();
+                System.out.println(al);
+                fout.println(al  * 2);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Не найдено");
+        }
+
+
+        First b = new First() {
+            @Override
+            void test() {
+             System.out.print("a");
+            }
+        };
+
+        First[] arr = new First[5];
+
+        for (int i = 0; i < 5 ; i++) {
+            int finalJ = i;
+            arr[i] = () -> System.out.println("A" + finalJ);
+        }
+        }
+
+
+
+        public interface First {
+            /*
+            private int a;
+
+            class B {
+                void test() {
+                    a = 5;
+                }
+            }
+
+            //Рефлексия
+            */
+
+            void test();
+
+        }
